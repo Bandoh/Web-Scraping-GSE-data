@@ -32,3 +32,8 @@ def get_profile(company):
 @app.route('/gse/equities', methods=['GET'])
 def get_equities():
     return equities()
+
+
+if __name__ == "__main__":
+    app.run()
+    pass
