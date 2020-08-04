@@ -23,7 +23,7 @@ def equities():
     t_rows = soup.findAll('tr')
     headers = t_rows.pop(0)
     headers = list(headers)
-    allData = {"data":[{}]}
+    allData = {"data":[]}
     for row in t_rows:
         d = {}
         for index, data in enumerate(row):
