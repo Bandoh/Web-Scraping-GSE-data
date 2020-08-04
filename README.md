@@ -190,6 +190,7 @@ Example
             "P/E Ratio": "29",
             "Session": "5782"
         },
+        ]
     }
 ```
 
