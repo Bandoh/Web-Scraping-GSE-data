@@ -53,7 +53,7 @@ Example
     ]
 ```
 # GET /gse/live/"somecompany"
-This endpoint provides the daily shares data for the requested companyt. Replace "somecompany" in the url to the company of your choice, it will be displayed if it is listed on the Ghana stocks website
+This endpoint provides the daily shares data for the requested company. Replace "somecompany" in the url with the company of your choice, it will be displayed only if it is listed on the Ghana stocks website
 Example: Assuming cat is a company
 >GET request to https://gse-gh.herokuapp.com/gse/live/cat
 
@@ -79,8 +79,8 @@ Example: Assuming cat is a company
 
 
 # POST /gse/historical
-This endpoint provides the historcal shares data for the requested company on the stock market. So replace "somecompany" in the url to the company of your choice, it will be displayed if it is listed on the Ghana stocks website
-Example: Assuming cat is a company
+This endpoint provides the historcal shares data of the requested company.
+Example
 >POST request to https://gse-gh.herokuapp.com/historical
 
 FORM DATA
@@ -126,7 +126,7 @@ FORM DATA
         ]
 }
 ```
-# GET /gse/profile/<company>
+# GET /gse/profile/"company"
 This endpoint provides the profile of the requested company
 Example
 >GET request to https://gse-gh.herokuapp.com/gse/profile/somecompany
@@ -158,7 +158,7 @@ Example
 ```
 
 # GET /gse/equities
-This endpoint provides the daily shares data for all company on the stock market
+This endpoint provides the equities data for all company on the stock market
 Example
 >GET request to https://gse-gh.herokuapp.com/gse/equities
 
