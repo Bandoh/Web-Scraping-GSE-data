@@ -1,16 +1,59 @@
 # GHANA STOCKS EXCHANGE API
 
-The Ghana stocks exchange api is a simple and easy to use application programming interface, providing data taken from [Ghana Stock exchange website](http://gse.com.gh). There are currently 5 endpoints in the api providing response in JSON format.
+The Ghana stocks exchange api is a simple and easy to use application programming interface, providing data taken from [Ghana Stock exchange website](http://gse.com.gh). There are currently 6 endpoints in the api providing response in JSON format.
 
 
 # End Points
 
-  - GET /gse/index
   - GET /gse/live
+  - GET /gse/index
   - GET /gse/live/"somecompany"
   - POST /gse/historical
   - GET /gse/profile/"company"
   - GET /gse/equities
+
+
+# GET /gse/live
+This endpoint provides the daily shares data for all company on the stock market
+Example
+>GET request to https://gse-gh.herokuapp.com/gse/live
+
+>Response
+ ```json
+{
+    "data": [
+        {
+            "closing_bid_price": "",
+            "closing_offer_price": "",
+            "closing_price": "0.81",
+            "isn": "GH9999911",
+            "last_trans_price": "0.51",
+            "opening_price": "0.51",
+            "prev_closing_price": "0.31",
+            "price_change": "0",
+            "share_code": "SOMESHARECODE",
+            "total_shares": "0",
+            "total_value": "0",
+            "year_high": "0.11",
+            "year_low": "0.11"
+        },
+        {
+            "closing_bid_price": "",
+            "closing_offer_price": "",
+            "closing_price": "0.81",
+            "isn": "GH9999900",
+            "last_trans_price": "0.59",
+            "opening_price": "0.59",
+            "prev_closing_price": "0.11",
+            "price_change": "0",
+            "share_code": "SOMESHARECODE",
+            "total_shares": "0",
+            "total_value": "0",
+            "year_high": "0.31",
+            "year_low": "0.31"
+        },
+    ]
+```
 
 # GET /gse/index
 This endpoint provides live composite index of Ghana stocks as well as top gainers, top losers , top value, top volume and more
@@ -157,47 +200,6 @@ This endpoint provides live composite index of Ghana stocks as well as top gaine
 }
 ```
 
-# GET /gse/live
-This endpoint provides the daily shares data for all company on the stock market
-Example
->GET request to https://gse-gh.herokuapp.com/gse/live
-
->Response
- ```json
-{
-    "data": [
-        {
-            "closing_bid_price": "",
-            "closing_offer_price": "",
-            "closing_price": "0.81",
-            "isn": "GH9999911",
-            "last_trans_price": "0.51",
-            "opening_price": "0.51",
-            "prev_closing_price": "0.31",
-            "price_change": "0",
-            "share_code": "SOMESHARECODE",
-            "total_shares": "0",
-            "total_value": "0",
-            "year_high": "0.11",
-            "year_low": "0.11"
-        },
-        {
-            "closing_bid_price": "",
-            "closing_offer_price": "",
-            "closing_price": "0.81",
-            "isn": "GH9999900",
-            "last_trans_price": "0.59",
-            "opening_price": "0.59",
-            "prev_closing_price": "0.11",
-            "price_change": "0",
-            "share_code": "SOMESHARECODE",
-            "total_shares": "0",
-            "total_value": "0",
-            "year_high": "0.31",
-            "year_low": "0.31"
-        },
-    ]
-```
 # GET /gse/live/"somecompany"
 This endpoint provides the daily shares data for the requested company. Replace "somecompany" in the url with the company of your choice, it will be displayed only if it is listed on the Ghana stocks website
 Example: Assuming cat is a company
