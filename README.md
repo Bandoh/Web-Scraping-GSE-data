@@ -6,9 +6,9 @@ The Ghana stocks exchange api is a simple and easy to use application programmin
 # End Points
 
   - GET /gse/live
-  - GET /gse/live/<somecompany>
+  - GET /gse/live/"somecompany"
   - POST /gse/historical
-  - GET /gse/profile/<company>
+  - GET /gse/profile/"company"
   - GET /gse/equities
 
 # GET /gse/live
@@ -52,10 +52,10 @@ Example
         },
     ]
 ```
-# GET /gse/live/<somecompany>
+# GET /gse/live/"somecompany"
 This endpoint provides the daily shares data for the requested companyt. Replace "somecompany" in the url to the company of your choice, it will be displayed if it is listed on the Ghana stocks website
 Example: Assuming cat is a company
->GET request to https://gse-gh.herokuapp.com/gse/cat
+>GET request to https://gse-gh.herokuapp.com/gse/live/cat
 
 >Response
  ```json
