@@ -5,11 +5,157 @@ The Ghana stocks exchange api is a simple and easy to use application programmin
 
 # End Points
 
+  - GET /gse/index
   - GET /gse/live
   - GET /gse/live/"somecompany"
   - POST /gse/historical
   - GET /gse/profile/"company"
   - GET /gse/equities
+
+# GET /gse/index
+This endpoint provides live composite index of Ghana stocks as well as top gainers, top losers , top value, top volume and more
+>GET request to https://gse-gh.herokuapp.com/gse/index
+
+>Response
+ ```json
+{
+    "data": [
+        {
+            "CompIndexSeries": [
+                {
+                    "CLOSE": 2118.9002,
+                    "TIME_SERIES": "04-23-2020 10:00:11.268375"
+                },
+                {
+                    "CLOSE": 2142.5937,
+                    "TIME_SERIES": "04-23-2020 10:08:27.930191"
+                },
+                {
+                    "CLOSE": 2166.2871,
+                    "TIME_SERIES": "04-23-2020 10:08:27.964129"
+                }
+            ],
+            "FinIndexSeries": [
+                {
+                    "CLOSE": 1894.5739,
+                    "TIME_SERIES": "04-23-2020 10:00:11.271613"
+                },
+                {
+                    "CLOSE": 1894.5739,
+                    "TIME_SERIES": "04-23-2020 10:12:19.367810"
+                },
+                {
+                    "CLOSE": 1854.4188,
+                    "TIME_SERIES": "04-23-2020 14:37:18.758906"
+                }
+            ],
+            "TopGainers": [
+                {
+                    "CHGE_PRICE": 0.696,
+                    "CLSE_PRICE": 7,
+                    "N": 1,
+                    "RANK": 1,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "EGH",
+                    "TURNOVER": 16100
+                },
+                {
+                    "CHGE_PRICE": 0.029,
+                    "CLSE_PRICE": 0.69,
+                    "N": 1,
+                    "RANK": 2,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "MTNGH",
+                    "TURNOVER": 193000
+                }
+            ],
+            "TopLossers": [],
+            "TopValue": [
+                {
+                    "CHGE_PRICE": 0.029,
+                    "CLSE_PRICE": 0.69,
+                    "N": 1,
+                    "RANK": 1,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "MTNGH",
+                    "TURNOVER_VALUE": 132900
+                },
+                {
+                    "CHGE_PRICE": 0.696,
+                    "CLSE_PRICE": 7,
+                    "N": 1,
+                    "RANK": 2,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "EGH",
+                    "TURNOVER_VALUE": 112630
+                },
+                {
+                    "CHGE_PRICE": 0,
+                    "CLSE_PRICE": 2.8,
+                    "N": 1,
+                    "RANK": 3,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "TOTAL",
+                    "TURNOVER_VALUE": 280
+                }
+            ],
+            "TopVolume": [
+                {
+                    "CHGE_PRICE": 0.029,
+                    "CLSE_PRICE": 0.69,
+                    "N": 1,
+                    "RANK": 1,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "MTNGH",
+                    "TURNOVER": 193000
+                },
+                {
+                    "CHGE_PRICE": 0.696,
+                    "CLSE_PRICE": 7,
+                    "N": 1,
+                    "RANK": 2,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "EGH",
+                    "TURNOVER": 16100
+                },
+                {
+                    "CHGE_PRICE": 0,
+                    "CLSE_PRICE": 2.8,
+                    "N": 1,
+                    "RANK": 3,
+                    "STATS_DATE": "23-APR-20",
+                    "SYMBOL": "TOTAL",
+                    "TURNOVER": 100
+                }
+            ],
+            "exchange_indicators": [
+                {
+                    "DOWN": 0,
+                    "ENTRY_DATETIME": "23-APR-20",
+                    "EQUAL": 33,
+                    "TRADES": 9,
+                    "UP": 2,
+                    "VALUE": 245810,
+                    "VOLUME": 209200
+                }
+            ],
+            "fin_ind_wk": [
+                {
+                    "CLOSE": 2152.6479,
+                    "HIGH": 2166.2871,
+                    "LOW": 2118.9002,
+                    "OPEN": 2097.1368,
+                    "RNK": 2,
+                    "TRADES": 9,
+                    "TRUNC(ENTRY_DATETIME)": "23-APR-20",
+                    "VALUE": 245810,
+                    "VOLUME": 209200
+                }
+            ]
+        }
+    ]
+}
+```
 
 # GET /gse/live
 This endpoint provides the daily shares data for all company on the stock market
@@ -167,30 +313,29 @@ Example
 {
     "data": [
         {
-            "Div. per share for last fin. year GH(\u00a2)": "0",
-            "Div. yield %": "0",
-            "EPS GH(\u00a2)": "1.1",
-            "EPS and PE ratios are based on results for the period": "1 MTHS- 1/03/2007p",
-            "Equities": "COMPANY",
-            "Issued Shares (mil.)": "100.95",
-            "Market Capt. GH(\u00a2) million": "122.63",
-            "NRF Investors' Holdings %": "",
-            "P/E Ratio": "1",
-            "Session": "5782"
+            "last_year_dps": "0",
+            "dividend_yield": "0",
+            "eps": "1.1",
+            "eps_per_period": "1 MTHS- 1/03/2007p",
+            "equities": "COMPANY",
+            "issued_shares": "100.95",
+            "market_capitalization": "122.63",
+            "nrf_investment_holdings": "",
+            "p/e_ratio": "1",
+            "session": "5782"
         },
         {
-            "Div. per share for last fin. year GH(\u00a2)": "0",
-            "Div. yield %": "0",
-            "EPS GH(\u00a2)": "0.1769",
-            "EPS and PE ratios are based on results for the period": "6 MTHS- 30/06/2020p",
-            "Equities": "ADB",
-            "Issued Shares (mil.)": "300.8",
-            "Market Capt. GH(\u00a2) million": "1,522.04",
-            "NRF Investors' Holdings %": "",
-            "P/E Ratio": "29",
-            "Session": "5782"
+            "last_year_dps": "0",
+            "dividend_yield": "0",
+            "eps": "1.1",
+            "eps_per_period": "1 MTHS- 1/03/2007p",
+            "equities": "COMPANY",
+            "issued_shares": "100.95",
+            "market_capitalization": "122.63",
+            "nrf_investment_holdings": "",
+            "p/e_ratio": "1",
+            "session": "5782"
         },
         ]
     }
 ```
-
