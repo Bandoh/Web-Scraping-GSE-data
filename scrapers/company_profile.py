@@ -17,7 +17,7 @@ def profile_per_company(company):
 
 
 def equities():
-    columns = ["session","equities","issued_shares","market_capitalization","nrf_investment_holdings","eps_pe_period","last_year_dps","dividend_yield","eps","p/e_ratio"]
+    columns = ["session","equities","issued_shares","market_capitalization","nrf_investment_holdings","eps_period","last_year_dps","dividend_yield","eps","p/e_ratio"]
     url = 'https://gse.com.gh/profile-of-listed-companies/'
     x = requests.get(url)
     soup = BeautifulSoup(x.text, 'html.parser')
