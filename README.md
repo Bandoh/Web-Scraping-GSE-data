@@ -181,13 +181,13 @@ Example
         {
             "Div. per share for last fin. year GH(\u00a2)": "0",
             "Div. yield %": "0",
-            "EPS GH(\u00a2)": "0.1769",
+            "EPS GH(\u00a2)": "0.179",
             "EPS and PE ratios are based on results for the period": "6 MTHS- 30/06/2020p",
-            "Equities": "ADB",
-            "Issued Shares (mil.)": "300.8",
-            "Market Capt. GH(\u00a2) million": "1,522.04",
+            "Equities": "SOMECOMPANY",
+            "Issued Shares (mil.)": "356.8",
+            "Market Capt. GH(\u00a2) million": "1,875.04",
             "NRF Investors' Holdings %": "",
-            "P/E Ratio": "29",
+            "P/E Ratio": "19",
             "Session": "5782"
         },
         ]
