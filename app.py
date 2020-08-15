@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file
-from scrapers.current_gse import current_per_company,current_gse
+from scrapers.current_gse import current_per_company,current_gse, real_time
 from scrapers.historical_gse import historical_per_company
 from scrapers.company_profile import profile_per_company, equities
 from scrapers.hompage import home_live_data
@@ -9,6 +9,11 @@ app = Flask(__name__)
 @app.route('/gse/index')
 def hello_world():
     return home_live_data()
+
+@app.route("/gse/realtime")
+def get_real_time():
+    return real_time()
+    pass
 
 @app.route('/doc')
 def helpp():
@@ -25,10 +30,7 @@ def get_all_current():
 
 @app.route('/gse/historical', methods=['POST'])
 def get_historical():
-    # print(dir(request))
-    data = request.data.decode("utf-8").replace("'", '"')
-    data  = json.loads(data)
-    return historical_per_company(data['company'],data['date_from'],data['date_to'])
+    return historical_per_company(request.form['company'],request.form['date_from'],request.form['date_to'])
 
 @app.route('/gse/profile/<company>', methods=['GET'])
 def get_profile(company):

@@ -23,4 +23,5 @@ def historical_per_company(company,from_date,to_date):
             pass
         allData['data'].append(d)
         pass
+    # print(allData)
     return allData
